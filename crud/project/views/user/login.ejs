@@ -1,0 +1,104 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="css/login.css">
+
+<link rel="icon" href="/ico.png" type="x-icon">
+
+    <title>𝐋𝐨𝐠𝐢𝐧 𝐏𝐚𝐠𝐞</title>
+
+</head>
+<body>
+
+<% include('../layout/header.ejs') %>
+
+
+<div class="wrapper">
+
+    <form action="/login" method="post">
+
+
+        <h1>𝐋𝐨𝐠𝐢𝐧</h1>
+
+
+        <% if(locals.userDosentMag) { %>
+            
+            <span class="msg text-danger fw-bold ">
+
+                <%=userDosentMag %>
+
+            </span>
+
+        <% } %>
+
+        <% if(locals.logoutMsg !== undefined && logoutMsg) { %> 
+
+            <div class="msg text-success fw-bold ">
+
+                 <%= logoutMsg %>
+
+            </div>
+
+        <% } %>
+
+         <% if(locals.successSignup !== undefined && successSignup) { %> 
+
+            <div class="msg text-success fw-bold ">
+
+                 <%= successSignup %>
+
+            </div>
+
+        <% } %>
+
+          <% if(locals.passWorng  !== undefined && passWorng ) { %> 
+
+            <div class="msg text-danger fw-bold ">
+
+                 <%= passWorng  %>
+
+            </div>
+
+        <% } %>
+
+         <% if(locals.adminUserMag !== undefined && adminUserMag) { %> 
+
+            <div class="msg text-danger  fw-bold ">
+
+                 <%= adminUserMag %>
+
+            </div>
+
+        <% } %>
+       
+    
+        <div class="input-box">
+
+            <input type="email" placeholder="𝙀𝙢𝙖𝙞𝙡" name="email" required>
+            <i class='bx bxs-user'></i>
+
+        </div>
+  
+        <div class="input-box">
+
+            <input type="password" placeholder="𝙋𝙖𝙨𝙨𝙬𝙤𝙧𝙙" name="password" required>
+            <i class='bx bxs-lock-alt' ></i>
+
+        </div>
+
+        <button type="submit" class=" btn btnn">𝙇𝙤𝙜𝙞𝙣</button>
+
+    </form>
+
+
+    <div class="sig d-flex justify-content-center">
+
+        <p class="sm text-white">𝘿𝙤𝙣𝙩`𝙩 𝙝𝙖𝙫𝙚 𝙖𝙣 𝙖𝙘𝙘𝙤𝙪𝙣𝙩?</p><a class="s text-white" href="/signup">𝙎𝙞𝙜𝙣𝙐𝙥</a>
+
+    </div>
+
+
+</div>
+
+
+
+<% include('../layout/footer.ejs') %>
